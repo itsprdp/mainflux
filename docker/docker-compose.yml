@@ -65,7 +65,7 @@ services:
       - mainflux-authn-db-volume:/var/lib/postgresql/data
 
   authn:
-    image: mainflux/authn:latest
+    image: mainflux/authn:0.10.0
     container_name: mainflux-authn
     depends_on:
       - authn-db
@@ -103,7 +103,7 @@ services:
       - mainflux-users-db-volume:/var/lib/postgresql/data
 
   users:
-    image: mainflux/users:latest
+    image: mainflux/users:0.10.0
     container_name: mainflux-users
     volumes:
       - ./users/emailer/templates/${MF_EMAIL_TEMPLATE}:/${MF_EMAIL_TEMPLATE}
@@ -158,7 +158,7 @@ services:
       - mainflux-things-redis-volume:/data
 
   things:
-    image: mainflux/things:latest
+    image: mainflux/things:0.10.0
     container_name: mainflux-things
     depends_on:
       - things-db
@@ -198,7 +198,7 @@ services:
       - mainflux-base-net
 
   ws-adapter:
-    image: mainflux/ws:latest
+    image: mainflux/ws:0.10.0
     container_name: mainflux-ws
     depends_on:
       - things
@@ -216,7 +216,7 @@ services:
       - mainflux-base-net
 
   http-adapter:
-    image: mainflux/http:latest
+    image: mainflux/http:0.10.0
     container_name: mainflux-http
     depends_on:
       - things
@@ -243,7 +243,7 @@ services:
       - mainflux-es-redis-volume:/data
 
   coap-adapter:
-    image: mainflux/coap:latest
+    image: mainflux/coap:0.10.0
     container_name: mainflux-coap
     depends_on:
       - things
@@ -262,7 +262,7 @@ services:
       - mainflux-base-net
 
   ui:
-    image: mainflux/ui:latest
+    image: mainflux/ui:0.10.0
     container_name: mainflux-ui
     restart: on-failure
     ports:
