@@ -130,6 +130,9 @@ rundev:
 run:
 	docker-compose -f docker/docker-compose.yml -f docker/aedes.yml up
 
+runbg:
+	docker-compose -f docker/docker-compose.yml -f docker/aedes.yml up -d
+
 runlora:
 	docker-compose \
 		-f docker/docker-compose.yml \
